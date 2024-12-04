@@ -1,6 +1,8 @@
 from django.db import models
-class Tests(models.Model):
-    
+
+
+class Medical(models.Model):
+    user = models.ForeignKey("users.User", related_name="user_tests", on_delete=models.CASCADE)
     HighBP = models.BooleanField()
     HighChol = models.BooleanField()
     CholCheck = models.BooleanField()

@@ -6,3 +6,4 @@ class TestSerializer(serializers.ModelSerializer):
         model = Test
         fields = '__all__'
         read_only_fields = ['response','user']
+        ref_name = "EyeTest" 
