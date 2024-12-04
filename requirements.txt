@@ -16,3 +16,9 @@ django-filter
 django-cors-headers==4.4.0
 black==22.10.0
 django-ckeditor==6.7.1
+langchain
+langchain-core
+langchain-google-genai
+langchain-community
+faiss-cpu
+pypdf
