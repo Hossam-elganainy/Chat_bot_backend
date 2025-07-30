@@ -17,9 +17,13 @@ from langchain.prompts import ChatPromptTemplate
 from langchain.memory import ConversationBufferMemory
 import os
 
-api_key = 'AIzaSyD4MUKPfo5cixAk1AvGLC7PmgUPYBG7WHg'
-if "GOOGLE_API_KEY" not in os.environ:
-    os.environ["GOOGLE_API_KEY"] = api_key
+# Get Google API key from environment variables
+GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
+if not GOOGLE_API_KEY:
+    raise ValueError("GOOGLE_API_KEY environment variable is required. Please set it in your .env file.")
+
+# Set the API key for LangChain
+os.environ["GOOGLE_API_KEY"] = GOOGLE_API_KEY
 
 llm = ChatGoogleGenerativeAI(
     model="gemini-1.5-flash",
