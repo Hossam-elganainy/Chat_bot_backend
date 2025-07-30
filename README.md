@@ -109,17 +109,20 @@ cp env_template.txt .env
 The `.env` file should contain:
 ```env
 # Django Configuration
-SECRET_KEY=django-insecure-5*x=eaxv&!f=*n@g1&aul80^u=y^$f4gts0%fxaxqa9$y&!tvr
+SECRET_KEY=your_django_secret_key_here
 DEBUG=True
 
 # Google AI Configuration
-GOOGLE_API_KEY=AIzaSyD4MUKPfo5cixAk1AvGLC7PmgUPYBG7WHg
+GOOGLE_API_KEY=your_google_gemini_api_key_here
 
 # CORS Configuration
 CORS_ALLOWED_ORIGINS=http://localhost:5173,http://127.0.0.1:5173
 ```
 
-**Note**: The Google API key included is from the development environment. For production, use your own API key.
+**Important**: 
+- Generate your own Django secret key using `python -c "from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())"`
+- Get your own Google Gemini API key from [Google AI Studio](https://aistudio.google.com/app/apikey)
+- Never commit real API keys or secret keys to version control!
 
 ### 5. Database Setup
 ```bash
